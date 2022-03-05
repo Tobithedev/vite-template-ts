@@ -1,4 +1,5 @@
 import Dative from 'dativejs';
+import { connect } from 'dytejs';
 import store from '../store';
 
 export let App = Dative.extend({
@@ -33,4 +34,8 @@ export let App = Dative.extend({
          <a href="https://dativejs.js.org/guide/index.html"   target="_blank">Documentation</a>
       </div>
     `,
+  // @ts-ignore
+  onmounted(): void {
+    connect()(this);
+  },
 });
